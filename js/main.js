@@ -2,9 +2,18 @@ const svg = d3.select("#chart-area").append("svg")
   .attr("width", 400)
   .attr("height", 400)
 
-singaporeOutline = FileAttachment("../data/NationalMapPolygonKML.geojson").json()
+singapore = "../data/NationalMapPolygonKML.geojson"
 
-console.log(singaporeOutline)
+var handleGeoJSON = function (data) {
+  console.log(data)
+}
+
+// $ = shortcut for jquery
+$.getJSON(singapore, handleGeoJSON)
+
+fetch(guinea).then(function(response) { return response.json() }).then(handleGeoJSON)
+
+console.log(singapore)
 
 // Plot.plot({
 //   marks: [
