@@ -9,7 +9,7 @@ var handleGeoJSON = function (data) {
 }
 
 // $ = shortcut for jquery
-$.getJSON(singapore, handleGeoJSON)
+jQuery.getJSON(singapore, handleGeoJSON)
 
 fetch(guinea).then(function(response) { return response.json() }).then(handleGeoJSON)
 
