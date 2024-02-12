@@ -7,5 +7,7 @@
 			"path": "../data"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "maisie-fisher.github.io"
+	}
 }

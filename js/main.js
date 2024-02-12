@@ -4,32 +4,29 @@ const svg = d3.select("#chart-area").append("svg")
 
 singapore = "../data/NationalMapPolygonKML.geojson"
 
-var handleGeoJSON = function (data) {
-  console.log(data)
+var handleGeoJSON = function (sing) {
+  console.log(sing.features)
+
+  let projection = d3.geoMercator().center([107,0]).scale(5000)
+  var path = d3.geoPath(projection);
+  let geoGenerator = d3.geoPath();
+
+  svg.selectAll('path')
+  .data(sing.features)
+  .enter()
+  .append('path')
+  .attr("fill", "none")
+  .attr("stroke", "green")
+  .attr('d', function (d) { return path(d); });
+
 }
 
 // $ = shortcut for jquery
-jQuery.getJSON(singapore, handleGeoJSON)
-
-fetch(guinea).then(function(response) { return response.json() }).then(handleGeoJSON)
-
+$.getJSON(singapore, handleGeoJSON)
+fetch(singapore).then(function(response) { return response.json() }).then(handleGeoJSON)
 console.log(singapore)
 
-// Plot.plot({
-//   marks: [
-//     Plot.geo(singaporeMainland, {
-//       fill: (d) => '#FAF8ED',
-//       stroke: (d) => 'black'
-//     }),
-//     Plot.geo(parks, {
-//       fill: (d) => '#748E63',
-//       stroke: (d) => 'black'
-//     })
-//     ]
-// })
+let projection = d3.geoMercator().center([1, 103]).scale(500);
+var path = d3.geoPath(projection);
+let geoGenerator = d3.geoPath();
 
-svg.append("circle")
-  .attr("cx", 100)
-  .attr("cy", 250)
-  .attr("r", 70)
-  .attr("fill", "green")
