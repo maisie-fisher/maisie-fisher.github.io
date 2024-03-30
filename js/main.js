@@ -1,32 +1,56 @@
-const svg = d3.select("#chart-area").append("svg")
-  .attr("width", 400)
-  .attr("height", 400)
+const svg = d3.select("#svg-test")
+const svgDiv = d3.select("#green-split")
+
+svgDiv.append('circle')
+.attr('cx', '50')
+.attr('cy', '50')
+.attr('r', '50')
+.attr('fill', 'green')
 
 singapore = "../data/NationalMapPolygonKML.geojson"
+singapore_parks = "../data/NParksParksandNatureReserves.geojson"
+
+function removeExtra(l) {
+  var desc = l['properties']['Description']
+  return ! desc.includes('MALAYSIA');
+}
 
 var handleGeoJSON = function (sing) {
-  console.log(sing.features)
-
-  let projection = d3.geoMercator().center([107,0]).scale(5000)
-  var path = d3.geoPath(projection);
-  let geoGenerator = d3.geoPath();
+  singaporeMainland = sing['features'].filter(removeExtra)
 
   svg.selectAll('path')
-  .data(sing.features)
+  .data(singaporeMainland)
   .enter()
   .append('path')
-  .attr("fill", "none")
-  .attr("stroke", "green")
+  .attr("fill", "#faedcd")
+  .attr("stroke", "#faedcd")
   .attr('d', function (d) { return path(d); });
 
 }
+
+var handleGeoJSON_parks = function (sing_parks) {
+  console.log(sing_parks)
+
+  svg.selectAll('path.parks')
+  .data(sing_parks.features)
+  .enter()
+  .append('path')
+  .attr("fill", "#ccd5ae")
+  .attr("stroke", "#ccd5ae")
+  .attr('d', function (d) { return path(d); });
+
+}
+
+let projection = d3.geoMercator().scale(110000).center([103.71, 1.36])
+var path = d3.geoPath(projection);
+let geoGenerator = d3.geoPath();
 
 // $ = shortcut for jquery
 $.getJSON(singapore, handleGeoJSON)
 fetch(singapore).then(function(response) { return response.json() }).then(handleGeoJSON)
 console.log(singapore)
 
-let projection = d3.geoMercator().center([1, 103]).scale(500);
-var path = d3.geoPath(projection);
-let geoGenerator = d3.geoPath();
+$.getJSON(singapore_parks, handleGeoJSON_parks)
+fetch(singapore_parks).then(function(response) { return response.json() }).then(handleGeoJSON_parks)
+console.log(singapore_parks)
 
