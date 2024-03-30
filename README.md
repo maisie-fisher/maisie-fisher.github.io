@@ -9,3 +9,9 @@ Questions to Ask :
 2. How much of Singapore is non-dedicated green space? Not sure how to quantify this.
 3. What is Singapore's green space compromised of? Types of Flora?
 4. What datasets are available about Singapore?
+
+Color Palette : 
+1. https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373
+
+HTML Help : 
+1. https://www.w3schools.com/html/html_attributes.asp
