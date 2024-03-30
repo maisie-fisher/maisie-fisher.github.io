@@ -5,3 +5,7 @@ Climate Datasets :
 4. NOAA Github - https://github.com/NOAAGov/NOAA-Affiliated-Projects
 
 Questions to Ask : 
+1. How much of Singapore is dedicated green space?
+2. How much of Singapore is non-dedicated green space? Not sure how to quantify this.
+3. What is Singapore's green space compromised of? Types of Flora?
+4. What datasets are available about Singapore?
