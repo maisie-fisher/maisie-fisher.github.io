@@ -3,6 +3,7 @@ Climate Datasets :
 2. NParks Parks and Nature Reserves - https://beta.data.gov.sg/collections/1489/datasets/d_77d7ec97be83d44f61b85454f844382f/view
 3. Climate Data Online - https://www.ncei.noaa.gov/cdo-web/datasets
 4. NOAA Github - https://github.com/NOAAGov/NOAA-Affiliated-Projects
+5. Singapore Land Data - https://data.worldbank.org/indicator/AG.LND.AGRI.ZS?locations=SG
 
 Questions to Ask : 
 1. How much of Singapore is dedicated green space?
