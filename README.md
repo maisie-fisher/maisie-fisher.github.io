@@ -5,6 +5,7 @@ Climate Datasets :
 4. NOAA Github - https://github.com/NOAAGov/NOAA-Affiliated-Projects
 5. Singapore Land Data - https://data.worldbank.org/indicator/AG.LND.AGRI.ZS?locations=SG
 6. https://wildshores.blogspot.com/search/label/field-trips
+7. https://tablebuilder.singstat.gov.sg/table/TS/M890621 - FOR CHECKING LAND AREAS
 
 Questions to Ask : 
 1. How much of Singapore is dedicated green space?
